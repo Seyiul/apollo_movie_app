@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import styled from "styled-components";
@@ -9,6 +9,7 @@ const GET_MOVIES = gql`
     movies {
       id
       medium_cover_image
+      title
     }
   }
 `;
@@ -18,6 +19,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: ;
 `;
 
 const Header = styled.header`
@@ -32,7 +34,7 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  font-size: 65px;
+  font-size: 80px;
   font-weight: 600;
   margin-bottom: 20px;
 `;
@@ -57,19 +59,61 @@ const Movies = styled.div`
   top: -50px;
 `;
 
+const SearchBar = styled.input`
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  text-align: center;
+
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292e;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+  &:focus {
+    border-color: #eccc68;
+    outline: none;
+    box-shadow: rgba(236, 204, 104, 0.3) 0px 0px 0px 3px;
+  }
+`;
+
 export default () => {
   const { loading, data } = useQuery(GET_MOVIES);
+  const [keyword, setKeyword] = useState(undefined);
+  const onChange = (event) => {
+    setKeyword(event.target.value);
+  };
   return (
     <Container>
       <Header>
-        <Title>MOVIES</Title>
-        <Subtitle>Find Your movies🎬</Subtitle>
+        <SearchBar
+          value={keyword}
+          onChange={onChange}
+          placeholder="🔎search"
+        ></SearchBar>
+        <Title>SUCHA</Title>
+        <Subtitle>Welcome to my cinema🎬</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}
       <Movies>
         {!loading &&
+          !keyword &&
           data.movies &&
           data.movies.map((m) => <Movie key={m.id} {...m} id={m.id} />)}
+      </Movies>
+      <Movies>
+        {!loading &&
+          keyword &&
+          data.movies
+            .filter((movie) => movie.title.includes(keyword))
+            .map((m) => <Movie key={m.id} {...m} id={m.id} />)}
       </Movies>
     </Container>
   );

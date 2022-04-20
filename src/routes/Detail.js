@@ -11,7 +11,6 @@ const GET_MOVIE = gql`
       language
       rating
       description_intro
-      isLiked @client
     }
     suggestions(id: $id) {
       id
