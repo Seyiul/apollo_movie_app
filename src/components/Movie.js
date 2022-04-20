@@ -6,6 +6,9 @@ const Movie = styled.div`
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   transition-duration: 0.5s;
   transition-property: transform;
+  display: block;
+  margin: 0px auto;
+
   &:hover {
     transform: scale(1.1);
   }
