@@ -2,7 +2,7 @@
 
 Movie app built with **React**, **Apollo** and **GraphQL**
 
----
+Using GraphQL API from [MovieQL](https://github.com/Seyiul/MovieQL)
 
 ## Apollo, GraphQL이란?
 
