@@ -1,5 +1,4 @@
 {
-  "homepage":"https://seyiul.github.io/apollo_movie_app",
   "name": "apollo-movie-app",
   "version": "0.1.0",
   "private": true,
@@ -22,9 +21,7 @@
     "start": "concurrently \"react-scripts start\" \"cd ./MovieQL && nodemon start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build",
-    "predeploy":"yarn run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
+  }
 }
