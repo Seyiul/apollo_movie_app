@@ -1,11 +1,12 @@
 # Apollo-React Movie App
-![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/63714074/164376352-15aecc92-27e5-48b4-9fbe-8b3c06f6f559.gif)
-
-[SUCHA](https://seyiul.github.io/apollo_movie_app/)
-
 Movie app built with **React**, **Apollo** and **GraphQL**
 
 Using GraphQL API from [MovieQL](https://github.com/Seyiul/MovieQL)
+
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/63714074/164376352-15aecc92-27e5-48b4-9fbe-8b3c06f6f559.gif)
+
+[SUCHA](https://seyiul.github.io/apollo_movie_app/)
 
 ## Apollo, GraphQL이란?
 
