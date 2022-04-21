@@ -86,7 +86,7 @@ const SearchBar = styled.input`
 
 export default () => {
   const { loading, data } = useQuery(GET_MOVIES);
-  const [keyword, setKeyword] = useState(undefined);
+  const [keyword, setKeyword] = useState("");
   const onChange = (event) => {
     setKeyword(event.target.value);
   };
@@ -102,21 +102,17 @@ export default () => {
         <Subtitle>Welcome to my cinema🎬</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}
-      {!loading &&
-        keyword &&
-        data.movies.filter((movie) => movie.title.includes(keyword)).length ==
+      {keyword &&
+        data?.movies?.filter((movie) => movie.title.includes(keyword)).length ==
           0 && <Loading>No Movies 😢</Loading>}
       <Movies>
-        {!loading &&
-          !keyword &&
-          data.movies &&
-          data.movies.map((m) => <Movie key={m.id} {...m} id={m.id} />)}
+        {!keyword &&
+          data?.movies?.map((m) => <Movie key={m.id} {...m} id={m.id} />)}
       </Movies>
       <Movies>
-        {!loading &&
-          keyword &&
-          data.movies
-            .filter((movie) => movie.title.includes(keyword))
+        {keyword &&
+          data?.movies
+            ?.filter((movie) => movie.title.includes(keyword))
             .map((m) => <Movie key={m.id} {...m} id={m.id} />)}
       </Movies>
     </Container>
