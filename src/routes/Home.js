@@ -102,6 +102,10 @@ export default () => {
         <Subtitle>Welcome to my cinema🎬</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}
+      {!loading &&
+        keyword &&
+        data.movies.filter((movie) => movie.title.includes(keyword)).length ==
+          0 && <Loading>No Movies 😢</Loading>}
       <Movies>
         {!loading &&
           !keyword &&
