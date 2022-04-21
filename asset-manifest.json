@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/apollo_movie_app/static/js/main.589ba699.js",
+    "main.js": "/apollo_movie_app/static/js/main.c3d2ad43.js",
     "index.html": "/apollo_movie_app/index.html",
-    "main.589ba699.js.map": "/apollo_movie_app/static/js/main.589ba699.js.map"
+    "main.c3d2ad43.js.map": "/apollo_movie_app/static/js/main.c3d2ad43.js.map"
   },
   "entrypoints": [
-    "static/js/main.589ba699.js"
+    "static/js/main.c3d2ad43.js"
   ]
 }
