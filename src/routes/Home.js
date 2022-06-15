@@ -19,7 +19,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  position: ;
 `;
 
 const Header = styled.header`
@@ -103,8 +102,8 @@ export default () => {
       </Header>
       {loading && <Loading>Loading...</Loading>}
       {keyword &&
-        data?.movies?.filter((movie) => movie.title.includes(keyword)).length ==
-          0 && <Loading>No Movies 😢</Loading>}
+        data?.movies?.filter((movie) => movie.title.includes(keyword))
+          .length === 0 && <Loading>No Movies 😢</Loading>}
       <Movies>
         {!keyword &&
           data?.movies?.map((m) => <Movie key={m.id} {...m} id={m.id} />)}
