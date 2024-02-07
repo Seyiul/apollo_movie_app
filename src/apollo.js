@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://sucha-movie-ql.herokuapp.com/",
+  uri: "https://movie-ql-seulyi.koyeb.app/",
   cache: new InMemoryCache(),
 });
 
